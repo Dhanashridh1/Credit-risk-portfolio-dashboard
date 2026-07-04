@@ -1,80 +1,55 @@
 # 🏦 Credit Risk & Loan Portfolio Intelligence Platform
-### Banking Analytics | SQL · Python · Power BI · Snowflake
+> **Banking Analytics | Power BI · SQL · Python · Snowflake**
+> 
+> *Built by Dhanashri Dhanavade | Senior Data Analyst | Microsoft PL-300 Certified*
 
 ---
 
-## Business Problem
-A bank's risk committee had **no real-time view** of their $2.4B loan portfolio health.
-Delinquency rates, LTV exposure and branch-level risk were tracked in **disconnected Excel files** across 5 departments — leadership was always reacting, never anticipating risk.
+## 📊 Dashboard Screenshots
 
-**The question this project answers:**
+### Page 1 — Executive Summary
+![Executive Summary](screenshots/page1_executive_summary.png)
+
+### Page 2 — Delinquency Aging Analysis
+![Delinquency Aging](screenshots/page2_delinquency_aging.png)
+
+### Page 3 — Branch Performance Scorecard
+![Branch Performance](screenshots/page3_branch_performance.png)
+
+### Page 4 — LTV Risk Analysis
+![LTV Risk Analysis](screenshots/page4_ltv_analysis.png)
+
+### Page 5 — Vintage Analysis
+![Vintage Analysis](screenshots/page5_vintage_analysis.png)
+
+### Page 6 — Credit Quality
+![Credit Quality](screenshots/page6_credit_quality.png)
+
+---
+
+## 🎯 Business Problem
+
+A bank's risk committee had **no real-time view** of their $2.4B loan portfolio. Delinquency rates, LTV exposure, and branch-level risk were tracked in **disconnected Excel files** — leadership was always reacting, never anticipating risk.
+
 > *"Which regions, branches and loan segments are at risk right now — and how much capital are we exposed to?"*
 
 ---
 
-## Solution Architecture
+## 💡 Solution Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  SOURCE SYSTEMS (5 CSV files → SQLite / Snowflake)          │
-│                                                             │
-│  dim_branch_master        → Branch / HR System             │
-│  fact_loan_originations   → Loan Origination System (LOS)  │
-│  fact_loan_servicing      → Collections / Servicing        │
-│  fact_credit_bureau       → Credit Bureau (Equifax et al)  │
-│  fact_property_collateral → Property / Appraisal System    │
-└──────────────────────┬──────────────────────────────────────┘
-                       │  SQL JOINs
-┌──────────────────────▼──────────────────────────────────────┐
-│  PYTHON (Jupyter Notebook)                                  │
-│  • EDA: 4 analysis charts                                   │
-│  • Risk scoring: LTV bands, credit bands, aging buckets     │
-│  • Export: 4 clean CSVs for Power BI                        │
-└──────────────────────┬──────────────────────────────────────┘
-                       │  Clean data
-┌──────────────────────▼──────────────────────────────────────┐
-│  POWER BI DASHBOARD (6 pages)                               │
-│  Page 1 — Executive Summary       (KPI cards + donut)       │
-│  Page 2 — Delinquency Aging       (aging buckets + map)     │
-│  Page 3 — Branch Performance      (scorecard + ranking)     │
-│  Page 4 — LTV Risk Analysis       (distribution + heatmap)  │
-│  Page 5 — Vintage Analysis        (trend + year-on-year)    │
-│  Page 6 — Credit Quality          (band breakdown + matrix) │
-│                                                             │
-│  + Row-Level Security by Region                             │
-│  + Daily automated refresh                                  │
-└─────────────────────────────────────────────────────────────┘
+5 Source Systems → SQL JOINs → Python EDA → Power BI Dashboard (6 pages)
+
+dim_branch_master.csv        → Branch / HR System
+fact_loan_originations.csv   → Loan Origination System
+fact_loan_servicing.csv      → Collections System
+fact_credit_bureau.csv       → Credit Bureau
+fact_property_collateral.csv → Property / Appraisal System
 ```
 
 ---
 
-## Key DAX Measures
-
-```dax
-Delinquency Rate =
-DIVIDE(
-    COUNTROWS(FILTER('pbi_master_loans',
-        'pbi_master_loans'[LoanStatus] <> "Current" &&
-        'pbi_master_loans'[LoanStatus] <> "Paid Off")),
-    COUNTROWS('pbi_master_loans')
-)
-
-Total Portfolio ($B) =
-ROUND(SUM('pbi_master_loans'[LoanAmount]) / 1000000000, 2)
-
-Default Exposure ($M) =
-ROUND(CALCULATE(
-    SUM('pbi_master_loans'[LoanAmount]),
-    'pbi_master_loans'[LoanStatus] = "Default"
-) / 1000000, 1)
-
-Avg LTV % =
-ROUND(AVERAGE('pbi_master_loans'[LTV]) * 100, 1)
-```
-
----
-
-## Business Impact
+## 📈 Business Impact
 
 | Metric | Result |
 |--------|--------|
@@ -82,48 +57,89 @@ ROUND(AVERAGE('pbi_master_loans'[LTV]) * 100, 1)
 | Reporting time reduction | **65% faster** |
 | Active dashboard users | **200+ with RLS** |
 | Source systems unified | **5 → 1 view** |
+| Portfolio covered | **$2.44 Billion** |
 
 ---
 
-## Tech Stack
+## 🔑 Key Findings
+
+- High-LTV (>85%) + Poor Credit (<650) segment has **52.8% delinquency rate** — 3x the portfolio average
+- Miami Branch (38.2%) and Las Vegas Branch (36.7%) flagged as **High Risk**
+- 2022 vintage loans showing highest delinquency at **29.2%**
+- **$108M default exposure** surfaced for the first time in one view
+
+---
+
+## 🛠️ Tech Stack
 
 | Tool | Purpose |
 |------|---------|
-| Python (pandas) | Data processing & EDA |
-| SQLite | Local data warehouse |
-| Snowflake | Cloud data warehouse (production) |
-| SQL | JOIN queries across 5 systems |
-| Power BI Desktop | Executive dashboard |
+| Power BI Desktop | 6-page executive dashboard |
 | DAX | Calculated measures & KPIs |
-| Azure Data Factory | Automated daily refresh |
+| Row-Level Security | Regional access control (200+ users) |
+| SQL (SQLite) | Data warehouse & JOIN queries |
+| Snowflake | Cloud data warehouse (production) |
+| Python (pandas) | EDA, risk scoring, data preparation |
+| Matplotlib / Seaborn | Analysis charts |
+| Jupyter Notebook | End-to-end analysis pipeline |
 
 ---
 
-## How to Run
+## 🗄️ Core SQL Query — 5 System JOIN
 
-1. Save all files in one folder
-2. Open Anaconda → Jupyter Notebook
-3. Open `Project1_CreditRisk_Analysis.ipynb`
-4. Run all cells — generates 4 clean CSVs + 4 charts
-5. Open Power BI → Get Data → load the 4 `pbi_*.csv` files
-6. Build relationships in Model view (LoanID + BranchName)
-7. Build 6 dashboard pages using the guide provided
-
----
-
-## Files
-
-```
-├── dim_branch_master.csv              ← Branch / HR System
-├── fact_loan_originations.csv         ← Loan Origination System
-├── fact_loan_servicing.csv            ← Collections System
-├── fact_credit_bureau.csv             ← Credit Bureau
-├── fact_property_collateral.csv       ← Property System
-├── Project1_CreditRisk_Analysis.ipynb ← SQL + Python notebook
-├── Mortgage_Dashboard.pbix            ← Power BI file (you build)
-└── README.md
+```sql
+SELECT
+    lo.LoanID, lo.LoanType, lo.LoanAmount, lo.InterestRate,
+    br.BranchName, br.Region, br.State,
+    sv.LoanStatus, sv.DaysDelinquent, sv.AgingBucket,
+    cb.CreditScore, cb.CreditBand,
+    pc.PropertyValue, pc.LTV, pc.LTV_Band,
+    ROUND(sv.MonthlyPayment / cb.MonthlyIncome, 3) AS DTI_Ratio
+FROM fact_loan_originations   lo
+JOIN dim_branch_master         br ON lo.BranchID = br.BranchID
+JOIN fact_loan_servicing       sv ON lo.LoanID   = sv.LoanID
+JOIN fact_credit_bureau        cb ON lo.LoanID   = cb.LoanID
+JOIN fact_property_collateral  pc ON lo.LoanID   = pc.LoanID
 ```
 
 ---
 
-*Built by Dhanashri Dhanavade | Senior Data Analyst | Microsoft PL-300 Certified*
+## 📊 Key DAX Measures
+
+```dax
+Delinquency Rate =
+ROUND(DIVIDE(
+    COUNTROWS(FILTER('pbi_master_loans',
+        'pbi_master_loans'[LoanStatus] <> "Current" &&
+        'pbi_master_loans'[LoanStatus] <> "Paid Off")),
+    COUNTROWS('pbi_master_loans')) * 100, 1)
+
+Default Exposure $M =
+ROUND(CALCULATE(SUM('pbi_master_loans'[LoanAmount]),
+    'pbi_master_loans'[LoanStatus] = "Default") / 1000000, 1)
+```
+
+---
+
+## 📁 Files
+
+```
+├── Project1_CreditRisk_Analysis.ipynb  ← SQL + Python notebook
+├── Credit_Risk_Dashboard.html          ← Interactive web demo
+├── screenshots/                        ← All 6 dashboard pages
+└── data/                               ← 5 source CSV files
+```
+
+---
+
+## 👩‍💼 About
+
+**Dhanashri Dhanavade** | Senior Data Analyst & BI Consultant
+
+- 📧 dhanashridh1@gmail.com
+- 🏅 Microsoft PL-300 Power BI Data Analyst Certified
+- 🏅 Microsoft DP-900 Azure Data Fundamentals Certified
+- 🏦 Senior BI Consultant @ Flagstar Bank
+
+---
+*⭐ Star this repo if you found it useful!*
