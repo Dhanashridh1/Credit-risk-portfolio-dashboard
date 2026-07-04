@@ -8,22 +8,22 @@
 ## 📊 Dashboard Screenshots
 
 ### Page 1 — Executive Summary
-![Executive Summary](screenshots/page1_executive_summary.png)
+![Executive Summary](Page1.png)
 
 ### Page 2 — Delinquency Aging Analysis
-![Delinquency Aging](screenshots/page2_delinquency_aging.png)
+![Delinquency Aging](Page2.png)
 
 ### Page 3 — Branch Performance Scorecard
-![Branch Performance](screenshots/page3_branch_performance.png)
+![Branch Performance](Page3.png)
 
 ### Page 4 — LTV Risk Analysis
-![LTV Risk Analysis](screenshots/page4_ltv_analysis.png)
+![LTV Risk Analysis](Page4.png)
 
 ### Page 5 — Vintage Analysis
-![Vintage Analysis](screenshots/page5_vintage_analysis.png)
+![Vintage Analysis](Page5.png)
 
 ### Page 6 — Credit Quality
-![Credit Quality](screenshots/page6_credit_quality.png)
+![Credit Quality](Page6.png)
 
 ---
 
