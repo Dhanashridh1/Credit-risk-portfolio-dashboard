@@ -1,0 +1,137 @@
+{
+  "name": "Credit Risk Command Center",
+  "dataColors": [
+    "#2E5C96",
+    "#5B9BF5",
+    "#3DDC84",
+    "#F0B860",
+    "#FF6B6B",
+    "#9CA8C0",
+    "#234876",
+    "#D4A03C"
+  ],
+  "background": "#0A0E14",
+  "foreground": "#E8ECF4",
+  "tableAccent": "#5B9BF5",
+  "good": "#3DDC84",
+  "neutral": "#F0B860",
+  "bad": "#FF6B6B",
+  "maximum": "#5B9BF5",
+  "center": "#9CA8C0",
+  "minimum": "#0F1525",
+  "null": "#3C485E",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#0F1525" } },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#1C2333" } },
+            "radius": 8
+          }
+        ],
+        "title": [
+          {
+            "fontColor": { "solid": { "color": "#9CA8C0" } },
+            "fontSize": 11,
+            "bold": false
+          }
+        ],
+        "labels": [
+          {
+            "color": { "solid": { "color": "#E8ECF4" } },
+            "fontSize": 10
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          { "color": { "solid": { "color": "#0A0E14" } }, "transparency": 0 }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [
+          { "color": { "solid": { "color": "#E8ECF4" } }, "fontSize": 24 }
+        ],
+        "categoryLabels": [
+          { "color": { "solid": { "color": "#5C6B85" } }, "fontSize": 11 }
+        ]
+      }
+    },
+    "multiRowCard": {
+      "*": {
+        "background": [
+          { "color": { "solid": { "color": "#0F1525" } }, "transparency": 0 }
+        ]
+      }
+    },
+    "slicer": {
+      "*": {
+        "background": [
+          { "color": { "solid": { "color": "#0D1220" } }, "transparency": 0 }
+        ],
+        "items": [
+          {
+            "fontColor": { "solid": { "color": "#E8ECF4" } },
+            "selectedColor": { "solid": { "color": "#5B9BF5" } }
+          }
+        ]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "grid": [
+          {
+            "gridHorizontalColor": { "solid": { "color": "#1C2333" } },
+            "gridVerticalColor": { "solid": { "color": "#1C2333" } },
+            "rowPadding": 6
+          }
+        ],
+        "columnHeaders": [
+          {
+            "backColor": { "solid": { "color": "#0D1220" } },
+            "fontColor": { "solid": { "color": "#9CA8C0" } },
+            "fontSize": 10,
+            "bold": true
+          }
+        ],
+        "values": [
+          {
+            "backColor": { "solid": { "color": "#0F1525" } },
+            "fontColor": { "solid": { "color": "#E8ECF4" } },
+            "fontSize": 10
+          }
+        ]
+      }
+    }
+  },
+  "textClasses": {
+    "callout": {
+      "fontSize": 24,
+      "color": "#E8ECF4"
+    },
+    "title": {
+      "fontSize": 14,
+      "color": "#E8ECF4",
+      "fontFace": "Segoe UI Semibold"
+    },
+    "header": {
+      "fontSize": 11,
+      "color": "#9CA8C0"
+    },
+    "label": {
+      "fontSize": 10,
+      "color": "#5C6B85"
+    }
+  }
+}

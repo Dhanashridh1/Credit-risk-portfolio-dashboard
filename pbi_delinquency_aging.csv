@@ -1,0 +1,121 @@
+AgingBucket,Region,BranchName,LoanCount,Exposure_M,AvgLTV,AvgDPD
+0-Current,Central,Chicago Branch,180,91.86,75.6,0.0
+0-Current,Central,Columbus Branch,218,104.47,74.5,0.0
+0-Current,Central,Detroit Branch,179,91.98,75.3,0.0
+0-Current,Central,Indianapolis Branch,199,96.63,75.8,0.0
+0-Current,East,Baltimore Branch,185,95.95,78.9,0.0
+0-Current,East,Boston Branch,183,89.56,75.1,0.0
+0-Current,East,Newark Branch,201,100.8,75.7,0.0
+0-Current,East,Philadelphia Branch,179,86.75,75.8,0.0
+0-Current,North,Albany Branch,181,90.38,75.9,0.0
+0-Current,North,Buffalo Branch,150,72.23,75.2,0.0
+0-Current,North,Rochester Branch,171,81.98,75.5,0.0
+0-Current,North,Syracuse Branch,153,74.14,77.4,0.0
+0-Current,South,Atlanta Branch,185,93.94,75.7,0.0
+0-Current,South,Charlotte Branch,170,82.02,75.1,0.0
+0-Current,South,Miami Branch,188,93.83,76.6,0.0
+0-Current,South,Tampa Branch,174,81.86,75.7,0.0
+0-Current,West,Las Vegas Branch,174,87.39,77.0,0.0
+0-Current,West,Los Angeles Branch,175,85.59,75.7,0.0
+0-Current,West,Phoenix Branch,165,81.66,76.6,0.0
+0-Current,West,San Diego Branch,182,85.12,75.7,0.0
+1-30 DPD,Central,Chicago Branch,19,9.94,70.6,45.0
+1-30 DPD,Central,Columbus Branch,17,7.11,76.1,45.11764705882353
+1-30 DPD,Central,Detroit Branch,26,13.06,75.5,48.5
+1-30 DPD,Central,Indianapolis Branch,20,10.68,78.6,42.45
+1-30 DPD,East,Baltimore Branch,22,11.8,77.5,44.5
+1-30 DPD,East,Boston Branch,20,10.01,80.4,47.1
+1-30 DPD,East,Newark Branch,20,10.09,76.2,44.7
+1-30 DPD,East,Philadelphia Branch,34,16.74,73.4,44.85294117647059
+1-30 DPD,North,Albany Branch,26,12.9,78.0,47.73076923076923
+1-30 DPD,North,Buffalo Branch,29,13.05,73.2,45.827586206896555
+1-30 DPD,North,Rochester Branch,18,8.31,72.4,44.833333333333336
+1-30 DPD,North,Syracuse Branch,29,13.36,75.7,43.172413793103445
+1-30 DPD,South,Atlanta Branch,23,11.18,81.5,46.82608695652174
+1-30 DPD,South,Charlotte Branch,24,10.56,75.4,45.75
+1-30 DPD,South,Miami Branch,29,13.72,71.8,45.51724137931034
+1-30 DPD,South,Tampa Branch,23,10.62,75.4,43.91304347826087
+1-30 DPD,West,Las Vegas Branch,28,13.95,77.3,44.75
+1-30 DPD,West,Los Angeles Branch,33,14.86,75.3,41.06060606060606
+1-30 DPD,West,Phoenix Branch,36,16.62,77.4,43.861111111111114
+1-30 DPD,West,San Diego Branch,26,12.59,73.2,42.46153846153846
+2-60 DPD,Central,Chicago Branch,15,7.74,83.5,72.13333333333334
+2-60 DPD,Central,Columbus Branch,18,9.4,79.1,75.11111111111111
+2-60 DPD,Central,Detroit Branch,13,7.06,75.5,75.3076923076923
+2-60 DPD,Central,Indianapolis Branch,13,7.62,71.8,69.76923076923077
+2-60 DPD,East,Baltimore Branch,15,5.53,71.2,73.06666666666666
+2-60 DPD,East,Boston Branch,15,8.25,73.6,73.4
+2-60 DPD,East,Newark Branch,15,7.6,82.7,72.86666666666666
+2-60 DPD,East,Philadelphia Branch,18,8.26,74.9,73.22222222222223
+2-60 DPD,North,Albany Branch,15,5.81,78.9,73.06666666666666
+2-60 DPD,North,Buffalo Branch,15,5.71,71.7,75.33333333333333
+2-60 DPD,North,Rochester Branch,18,9.45,75.1,75.88888888888889
+2-60 DPD,North,Syracuse Branch,7,3.94,79.1,76.71428571428571
+2-60 DPD,South,Atlanta Branch,18,9.05,75.3,74.0
+2-60 DPD,South,Charlotte Branch,15,6.09,81.5,73.8
+2-60 DPD,South,Miami Branch,14,5.44,76.5,72.64285714285714
+2-60 DPD,South,Tampa Branch,10,4.24,72.3,75.1
+2-60 DPD,West,Las Vegas Branch,11,4.33,78.9,77.18181818181819
+2-60 DPD,West,Los Angeles Branch,13,6.82,75.9,75.61538461538461
+2-60 DPD,West,Phoenix Branch,25,13.05,75.4,74.6
+2-60 DPD,West,San Diego Branch,13,6.4,77.5,74.92307692307692
+3-90 DPD,Central,Chicago Branch,7,2.76,80.3,103.28571428571429
+3-90 DPD,Central,Columbus Branch,12,5.25,68.9,105.33333333333333
+3-90 DPD,Central,Detroit Branch,9,4.02,76.8,103.55555555555556
+3-90 DPD,Central,Indianapolis Branch,11,5.78,80.2,105.72727272727273
+3-90 DPD,East,Baltimore Branch,8,3.86,74.9,104.75
+3-90 DPD,East,Boston Branch,14,5.85,78.1,104.57142857142857
+3-90 DPD,East,Newark Branch,17,8.27,74.2,105.17647058823529
+3-90 DPD,East,Philadelphia Branch,12,7.31,75.8,102.83333333333333
+3-90 DPD,North,Albany Branch,15,7.94,78.7,107.13333333333334
+3-90 DPD,North,Buffalo Branch,25,11.09,82.7,100.28
+3-90 DPD,North,Rochester Branch,11,6.5,80.9,103.81818181818181
+3-90 DPD,North,Syracuse Branch,8,3.96,74.4,100.75
+3-90 DPD,South,Atlanta Branch,18,9.36,74.6,99.83333333333333
+3-90 DPD,South,Charlotte Branch,15,8.49,78.1,104.86666666666666
+3-90 DPD,South,Miami Branch,11,5.69,74.5,106.0
+3-90 DPD,South,Tampa Branch,12,5.24,79.8,103.58333333333333
+3-90 DPD,West,Las Vegas Branch,13,5.09,75.0,100.0
+3-90 DPD,West,Los Angeles Branch,14,6.71,74.9,105.85714285714286
+3-90 DPD,West,Phoenix Branch,11,6.62,75.0,103.27272727272727
+3-90 DPD,West,San Diego Branch,16,9.0,73.9,103.5
+4-Default,Central,Chicago Branch,8,2.48,72.1,225.5
+4-Default,Central,Columbus Branch,17,8.31,75.8,244.47058823529412
+4-Default,Central,Detroit Branch,12,7.38,71.8,267.25
+4-Default,Central,Indianapolis Branch,9,3.62,76.1,217.66666666666666
+4-Default,East,Baltimore Branch,10,5.22,76.4,243.4
+4-Default,East,Boston Branch,11,4.85,73.5,229.8181818181818
+4-Default,East,Newark Branch,8,3.58,86.1,245.25
+4-Default,East,Philadelphia Branch,16,7.09,74.2,235.875
+4-Default,North,Albany Branch,13,6.77,73.8,226.30769230769232
+4-Default,North,Buffalo Branch,6,3.31,81.5,307.5
+4-Default,North,Rochester Branch,7,2.9,78.7,258.14285714285717
+4-Default,North,Syracuse Branch,5,2.66,69.6,222.8
+4-Default,South,Atlanta Branch,10,4.72,76.1,251.7
+4-Default,South,Charlotte Branch,12,5.61,70.2,203.5
+4-Default,South,Miami Branch,8,3.17,72.9,230.75
+4-Default,South,Tampa Branch,10,5.37,71.2,215.1
+4-Default,West,Las Vegas Branch,13,5.29,78.2,227.23076923076923
+4-Default,West,Los Angeles Branch,18,7.83,74.0,247.22222222222223
+4-Default,West,Phoenix Branch,8,4.27,71.5,205.625
+4-Default,West,San Diego Branch,7,2.38,69.4,249.71428571428572
+5-Paid Off,Central,Chicago Branch,8,3.49,74.6,0.0
+5-Paid Off,Central,Columbus Branch,7,2.92,71.7,0.0
+5-Paid Off,Central,Detroit Branch,2,1.09,63.0,0.0
+5-Paid Off,Central,Indianapolis Branch,7,4.06,81.4,0.0
+5-Paid Off,East,Baltimore Branch,10,5.24,77.4,0.0
+5-Paid Off,East,Boston Branch,10,4.88,74.6,0.0
+5-Paid Off,East,Newark Branch,4,1.77,68.0,0.0
+5-Paid Off,East,Philadelphia Branch,14,6.16,78.9,0.0
+5-Paid Off,North,Albany Branch,5,2.83,81.6,0.0
+5-Paid Off,North,Buffalo Branch,7,3.02,78.4,0.0
+5-Paid Off,North,Rochester Branch,8,2.95,71.5,0.0
+5-Paid Off,North,Syracuse Branch,4,3.1,73.8,0.0
+5-Paid Off,South,Atlanta Branch,7,4.22,71.9,0.0
+5-Paid Off,South,Charlotte Branch,9,2.65,70.9,0.0
+5-Paid Off,South,Miami Branch,5,2.18,68.2,0.0
+5-Paid Off,South,Tampa Branch,7,3.43,72.4,0.0
+5-Paid Off,West,Las Vegas Branch,9,4.11,74.0,0.0
+5-Paid Off,West,Los Angeles Branch,3,1.01,89.0,0.0
+5-Paid Off,West,Phoenix Branch,11,5.78,74.2,0.0
+5-Paid Off,West,San Diego Branch,6,2.89,71.5,0.0

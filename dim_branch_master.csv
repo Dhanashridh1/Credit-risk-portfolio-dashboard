@@ -1,0 +1,21 @@
+BranchID,BranchName,Region,State,BranchManager,MonthlyTarget_M,StaffCount,EstablishedYear
+BR001,Albany Branch,North,NY,Sarah Mitchell,142.5,18,2005
+BR002,Buffalo Branch,North,NY,James Carlson,98.3,12,2008
+BR003,Syracuse Branch,North,NY,Linda Perez,87.2,10,2010
+BR004,Rochester Branch,North,NY,Tom Henderson,115.8,15,2003
+BR005,Atlanta Branch,South,GA,Angela Brooks,189.4,28,1998
+BR006,Miami Branch,South,FL,Carlos Rivera,204.7,32,1995
+BR007,Tampa Branch,South,FL,Diana Foster,156.2,22,2001
+BR008,Charlotte Branch,South,NC,Michael Hayes,133.6,19,2004
+BR009,Boston Branch,East,MA,Patricia Cole,178.9,26,1999
+BR010,Philadelphia Branch,East,PA,Robert Simmons,165.3,24,2000
+BR011,Newark Branch,East,NJ,Jennifer Walsh,122.7,16,2006
+BR012,Baltimore Branch,East,MD,David Kumar,99.8,13,2009
+BR013,Los Angeles Branch,West,CA,Amy Zhang,245.6,35,1993
+BR014,San Diego Branch,West,CA,Kevin Nguyen,198.2,29,1997
+BR015,Phoenix Branch,West,AZ,Rachel Torres,167.4,23,2002
+BR016,Las Vegas Branch,West,NV,Steven Park,143.1,20,2005
+BR017,Chicago Branch,Central,IL,Nancy Williams,212.8,31,1996
+BR018,Detroit Branch,Central,MI,Brian Johnson,134.5,18,2004
+BR019,Columbus Branch,Central,OH,Melissa Brown,108.9,14,2007
+BR020,Indianapolis Branch,Central,IN,Christopher Lee,95.6,11,2011
