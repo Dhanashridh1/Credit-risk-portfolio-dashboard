@@ -139,7 +139,7 @@ ROUND(CALCULATE(SUM('pbi_master_loans'[LoanAmount]),
 - 📧 dhanashridh1@gmail.com
 - 🏅 Microsoft PL-300 Power BI Data Analyst Certified
 - 🏅 Microsoft DP-900 Azure Data Fundamentals Certified
-- 🏦 Senior BI Consultant @ Flagstar Bank
+- 🏦 Senior Data Analyst
 
 ---
 *⭐ Star this repo if you found it useful!*
