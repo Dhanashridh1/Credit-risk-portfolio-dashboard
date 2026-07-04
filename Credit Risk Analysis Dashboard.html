@@ -1,0 +1,309 @@
+
+<style>
+.root{padding:1rem 0;font-family:var(--font-sans);}
+.page-section{margin-bottom:2rem;}
+.page-title{font-size:0.85rem;font-weight:500;color:var(--color-text-primary);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.5rem;}
+.page-num{width:22px;height:22px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-size:0.7rem;display:grid;place-items:center;flex-shrink:0;}
+.canvas{background:#0A0E14;border-radius:8px;padding:10px;border:1px solid #1C2333;position:relative;}
+.pbar{height:28px;background:#0D1220;border-radius:5px;margin-bottom:8px;display:flex;align-items:center;padding:0 10px;gap:8px;}
+.pbar-title{font-size:9px;color:#9CA8C0;font-weight:500;}
+.ptab{font-size:8px;padding:2px 8px;border-radius:3px;background:#1C2333;color:#5C6B85;}
+.ptab.active{background:#5B9BF5;color:#fff;}
+.slicer-bar{height:22px;background:#0D1220;border-radius:4px;margin-bottom:8px;display:flex;align-items:center;padding:0 8px;gap:6px;}
+.sl{font-size:7.5px;padding:2px 7px;border-radius:3px;background:#152038;color:#5B9BF5;border:1px solid #243352;}
+.sl-label{font-size:7.5px;color:#5C6B85;}
+.row{display:flex;gap:8px;margin-bottom:8px;}
+.visual{background:#0F1525;border:1px solid #1C2333;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;padding:6px;}
+.vl{font-size:7px;color:#5C6B85;text-align:center;line-height:1.3;}
+.vv{font-size:13px;font-weight:500;color:#E8ECF4;font-family:monospace;}
+.vtitle{font-size:7.5px;color:#9CA8C0;font-weight:500;margin-bottom:3px;text-align:center;}
+/* card */
+.card{flex:1;height:52px;}
+/* chart */
+.chart-h{height:110px;}
+.chart-m{height:85px;}
+.chart-s{height:70px;}
+/* full width */
+.fw{flex:1;}
+/* half */
+.hw{flex:1;}
+/* third */
+.tw{flex:1;}
+/* quarter */
+.qw{flex:0 0 23%;}
+/* wide */
+.wide{flex:2;}
+.narrow{flex:1;}
+/* table */
+.tbl{background:#0F1525;border:1px solid #1C2333;border-radius:6px;padding:5px 8px;}
+.tbl-h{display:flex;gap:8px;border-bottom:1px solid #1C2333;padding-bottom:3px;margin-bottom:3px;}
+.tbl-hc{font-size:6.5px;color:#5C6B85;flex:1;}
+.tbl-r{display:flex;gap:8px;padding:1.5px 0;}
+.tbl-rc{font-size:6.5px;color:#9CA8C0;flex:1;}
+/* mini bar chart */
+.bar-chart{display:flex;align-items:flex-end;gap:2px;height:45px;padding:0 4px;}
+.bar{background:#2E5C96;border-radius:2px 2px 0 0;flex:1;}
+.bar.red{background:#C0392B;}
+.bar.amb{background:#D4A03C;}
+.bar.grn{background:#2E8B57;}
+/* mini donut */
+.donut-wrap{display:flex;align-items:center;gap:8px;}
+.legend-items{display:flex;flex-direction:column;gap:2px;}
+.legend-item{display:flex;align-items:center;gap:3px;font-size:6.5px;color:#5C6B85;}
+.legend-dot{width:5px;height:5px;border-radius:50%;}
+/* scatter */
+.scatter{position:relative;height:50px;}
+.dot{position:absolute;width:3px;height:3px;border-radius:50%;}
+</style>
+<div class="root">
+<h2 class="sr-only">Layout guide for all 6 Power BI dashboard pages</h2>
+
+<!-- PAGE 1 -->
+<div class="page-section">
+<div class="page-title"><div class="page-num">1</div>Executive Summary — Layout</div>
+<div class="canvas">
+  <div class="pbar">
+    <span class="pbar-title">🏦 Credit Risk Intelligence</span>
+    <span class="ptab active">Executive Summary</span><span class="ptab">Delinquency</span><span class="ptab">Branches</span><span class="ptab">LTV</span><span class="ptab">Vintage</span><span class="ptab">Credit</span>
+  </div>
+  <div class="slicer-bar"><span class="sl-label">Region:</span><span class="sl">All</span><span class="sl">North</span><span class="sl">South</span><span class="sl">East</span><span class="sl">West</span><span class="sl">Central</span></div>
+  <div class="row">
+    <div class="visual card"><div class="vl">TOTAL LOANS</div><div class="vv">5,000</div></div>
+    <div class="visual card"><div class="vl">PORTFOLIO</div><div class="vv">$2.44B</div></div>
+    <div class="visual card" style="border-top:2px solid #C0392B;"><div class="vl">DELINQUENCY</div><div class="vv" style="color:#FF6B6B;">25.9%</div></div>
+    <div class="visual card" style="border-top:2px solid #D4A03C;"><div class="vl">DEFAULT EXP.</div><div class="vv" style="color:#F0B860;">$108M</div></div>
+    <div class="visual card"><div class="vl">AVG CREDIT</div><div class="vv">692</div></div>
+  </div>
+  <div class="row">
+    <div class="visual wide chart-h">
+      <div class="vtitle">Portfolio Volume vs Delinquency Rate — by Vintage Year</div>
+      <div class="bar-chart">
+        <div class="bar" style="height:30%;background:#1A3559;"></div>
+        <div class="bar" style="height:45%;background:#234876;"></div>
+        <div class="bar" style="height:65%;background:#234876;"></div>
+        <div class="bar" style="height:90%;"></div>
+        <div class="bar" style="height:82%;"></div>
+        <div class="bar" style="height:60%;background:#234876;"></div>
+      </div>
+      <div class="vl">Combo: Column = Volume $M · Line = Delinquency %</div>
+    </div>
+    <div class="visual hw chart-h">
+      <div class="vtitle">Loan Status Breakdown</div>
+      <svg viewBox="0 0 80 70" style="width:80px;">
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#1C2333" stroke-width="12"/>
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#2E8B57" stroke-width="12" stroke-dasharray="126 176" transform="rotate(-90 40 35)"/>
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#D4A03C" stroke-width="12" stroke-dasharray="29 176" stroke-dashoffset="-126" transform="rotate(-90 40 35)"/>
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#C0392B" stroke-width="12" stroke-dasharray="21 176" stroke-dashoffset="-155" transform="rotate(-90 40 35)"/>
+        <text x="40" y="38" text-anchor="middle" font-size="10" fill="#E8ECF4" font-weight="500">71%</text>
+      </svg>
+      <div class="vl">Donut Chart · Legend=LoanStatus · Values=Count</div>
+    </div>
+    <div class="visual narrow chart-h">
+      <div class="vtitle">Portfolio by Region ($B)</div>
+      <div style="width:100%;padding:0 6px;">
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;"><span style="font-size:6px;color:#5C6B85;width:35px;">Central</span><div style="flex:1;height:8px;background:#2E5C96;border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;"><span style="font-size:6px;color:#5C6B85;width:35px;">West</span><div style="flex:1;height:8px;background:#2E5C96;border-radius:2px;width:95%;"></div></div>
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;"><span style="font-size:6px;color:#5C6B85;width:35px;">East</span><div style="flex:1;height:8px;background:#234876;border-radius:2px;width:90%;"></div></div>
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;"><span style="font-size:6px;color:#5C6B85;width:35px;">South</span><div style="flex:1;height:8px;background:#234876;border-radius:2px;width:87%;"></div></div>
+        <div style="display:flex;align-items:center;gap:4px;"><span style="font-size:6px;color:#5C6B85;width:35px;">North</span><div style="flex:1;height:8px;background:#1A3559;border-radius:2px;width:82%;"></div></div>
+      </div>
+      <div class="vl">Bar Chart · Y=Region · X=Portfolio $B</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page-section">
+<div class="page-title"><div class="page-num">2</div>Delinquency Aging — Layout</div>
+<div class="canvas">
+  <div class="pbar"><span class="pbar-title">🏦 Credit Risk Intelligence</span><span class="ptab">Executive Summary</span><span class="ptab active">Delinquency</span></div>
+  <div class="slicer-bar"><span class="sl-label">Region:</span><span class="sl">All</span><span class="sl">North</span><span class="sl">South</span><span class="sl">East</span><span class="sl">West</span><span class="sl">Central</span></div>
+  <div class="row">
+    <div class="visual card" style="border-top:2px solid #C0392B;"><div class="vl">DELINQUENCY RATE</div><div class="vv" style="color:#FF6B6B;">25.9%</div></div>
+    <div class="visual card" style="border-top:2px solid #D4A03C;"><div class="vl">DEFAULT EXPOSURE</div><div class="vv" style="color:#F0B860;">$108M</div></div>
+    <div class="visual card"><div class="vl">TOTAL LOANS</div><div class="vv">5,000</div></div>
+  </div>
+  <div class="row">
+    <div class="visual wide chart-h">
+      <div class="vtitle">Delinquency by Aging Bucket & Region</div>
+      <div style="width:100%;padding:0 6px;display:flex;flex-direction:column;gap:4px;">
+        <div style="display:flex;align-items:center;gap:3px;"><span style="font-size:6px;color:#5C6B85;width:45px;">0-Current</span><div style="width:85%;height:10px;background:#2E8B57;border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:3px;"><span style="font-size:6px;color:#5C6B85;width:45px;">1-30 DPD</span><div style="width:35%;height:10px;background:#D4A03C;border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:3px;"><span style="font-size:6px;color:#5C6B85;width:45px;">2-60 DPD</span><div style="width:22%;height:10px;background:#E67E22;border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:3px;"><span style="font-size:6px;color:#5C6B85;width:45px;">3-90 DPD</span><div style="width:18%;height:10px;background:#E74C3C;border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:3px;"><span style="font-size:6px;color:#5C6B85;width:45px;">4-Default</span><div style="width:12%;height:10px;background:#C0392B;border-radius:2px;"></div></div>
+      </div>
+      <div class="vl">Stacked Bar · Y=AgingBucket · X=Count LoanID · Legend=Region</div>
+    </div>
+    <div class="visual hw chart-h" style="flex-direction:column;align-items:stretch;">
+      <div class="vtitle">Delinquency Detail Table</div>
+      <div class="tbl" style="flex:1;">
+        <div class="tbl-h"><span class="tbl-hc">AgingBucket</span><span class="tbl-hc">Region</span><span class="tbl-hc">Loans</span><span class="tbl-hc">Exposure $M</span><span class="tbl-hc">AvgDPD</span></div>
+        <div class="tbl-r"><span class="tbl-rc" style="color:#2E8B57;">0-Current</span><span class="tbl-rc">North</span><span class="tbl-rc">512</span><span class="tbl-rc">231.4</span><span class="tbl-rc">0</span></div>
+        <div class="tbl-r"><span class="tbl-rc" style="color:#D4A03C;">1-30 DPD</span><span class="tbl-rc">South</span><span class="tbl-rc">98</span><span class="tbl-rc">44.2</span><span class="tbl-rc">42</span></div>
+        <div class="tbl-r"><span class="tbl-rc" style="color:#C0392B;">4-Default</span><span class="tbl-rc">West</span><span class="tbl-rc">45</span><span class="tbl-rc">21.8</span><span class="tbl-rc">185</span></div>
+      </div>
+      <div class="vl" style="margin-top:4px;">Table · Source: pbi_delinquency_aging</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page-section">
+<div class="page-title"><div class="page-num">3</div>Branch Performance — Layout</div>
+<div class="canvas">
+  <div class="pbar"><span class="pbar-title">🏦 Credit Risk Intelligence</span><span class="ptab active">Branch Performance</span></div>
+  <div class="slicer-bar"><span class="sl-label">Region:</span><span class="sl">All</span><span class="sl">North</span><span class="sl">South</span><span class="sl">East</span><span class="sl">West</span><span class="sl">Central</span></div>
+  <div class="row">
+    <div class="visual wide" style="height:100px;flex-direction:column;align-items:stretch;">
+      <div class="vtitle">Branch Performance Scorecard — RAG Status</div>
+      <div class="tbl" style="flex:1;">
+        <div class="tbl-h"><span class="tbl-hc">Branch</span><span class="tbl-hc">Region</span><span class="tbl-hc">Portfolio $M</span><span class="tbl-hc">Loans</span><span class="tbl-hc" style="color:#FF6B6B;">DelRate%</span><span class="tbl-hc">AvgCredit</span><span class="tbl-hc">Status</span></div>
+        <div class="tbl-r"><span class="tbl-rc">Miami Branch</span><span class="tbl-rc">South</span><span class="tbl-rc">204.7</span><span class="tbl-rc">451</span><span class="tbl-rc" style="background:#C0392B;color:#fff;padding:0 3px;border-radius:2px;">38.2%</span><span class="tbl-rc">668</span><span class="tbl-rc" style="color:#FF6B6B;">High Risk</span></div>
+        <div class="tbl-r"><span class="tbl-rc">Atlanta Branch</span><span class="tbl-rc">South</span><span class="tbl-rc">189.4</span><span class="tbl-rc">418</span><span class="tbl-rc" style="background:#D4A03C;color:#fff;padding:0 3px;border-radius:2px;">31.4%</span><span class="tbl-rc">679</span><span class="tbl-rc" style="color:#D4A03C;">Watch</span></div>
+        <div class="tbl-r"><span class="tbl-rc">Boston Branch</span><span class="tbl-rc">East</span><span class="tbl-rc">178.9</span><span class="tbl-rc">394</span><span class="tbl-rc" style="background:#2E8B57;color:#fff;padding:0 3px;border-radius:2px;">18.1%</span><span class="tbl-rc">718</span><span class="tbl-rc" style="color:#2E8B57;">Healthy</span></div>
+      </div>
+    </div>
+    <div class="visual narrow chart-h">
+      <div class="vtitle">Branch Risk Ranking</div>
+      <div style="width:100%;padding:0 4px;display:flex;flex-direction:column;gap:3px;">
+        <div style="display:flex;align-items:center;gap:3px;"><div style="width:75%;height:7px;background:#C0392B;border-radius:2px;"></div><span style="font-size:6px;color:#FF6B6B;">38.2%</span></div>
+        <div style="display:flex;align-items:center;gap:3px;"><div style="width:70%;height:7px;background:#C0392B;border-radius:2px;"></div><span style="font-size:6px;color:#FF6B6B;">36.7%</span></div>
+        <div style="display:flex;align-items:center;gap:3px;"><div style="width:60%;height:7px;background:#D4A03C;border-radius:2px;"></div><span style="font-size:6px;color:#D4A03C;">31.4%</span></div>
+        <div style="display:flex;align-items:center;gap:3px;"><div style="width:55%;height:7px;background:#D4A03C;border-radius:2px;"></div><span style="font-size:6px;color:#D4A03C;">29.8%</span></div>
+        <div style="display:flex;align-items:center;gap:3px;"><div style="width:35%;height:7px;background:#2E8B57;border-radius:2px;"></div><span style="font-size:6px;color:#2E8B57;">18.1%</span></div>
+      </div>
+      <div class="vl">Bar · Y=BranchName · X=DelRate_Pct</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page-section">
+<div class="page-title"><div class="page-num">4</div>LTV Risk Analysis — Layout</div>
+<div class="canvas">
+  <div class="pbar"><span class="pbar-title">🏦 Credit Risk Intelligence</span><span class="ptab active">LTV Risk Analysis</span></div>
+  <div class="slicer-bar"><span class="sl-label">Region:</span><span class="sl">All</span><span class="sl">North</span><span class="sl">South</span></div>
+  <div class="row">
+    <div class="visual tw chart-h">
+      <div class="vtitle">LTV Band Distribution</div>
+      <svg viewBox="0 0 80 70" style="width:70px;">
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#1C2333" stroke-width="12"/>
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#2E8B57" stroke-width="12" stroke-dasharray="90 176" transform="rotate(-90 40 35)"/>
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#D4A03C" stroke-width="12" stroke-dasharray="70 176" stroke-dashoffset="-90" transform="rotate(-90 40 35)"/>
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#C0392B" stroke-width="12" stroke-dasharray="16 176" stroke-dashoffset="-160" transform="rotate(-90 40 35)"/>
+        <text x="40" y="38" text-anchor="middle" font-size="9" fill="#E8ECF4">LTV</text>
+      </svg>
+      <div class="vl">Donut · Legend=LTV_Band</div>
+    </div>
+    <div class="visual wide chart-h">
+      <div class="vtitle">Delinquency Rate by LTV Band & Credit Band</div>
+      <div class="bar-chart" style="align-items:flex-end;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex:1;"><div style="width:100%;height:20px;background:#2E8B57;border-radius:2px 2px 0 0;"></div><div style="font-size:5.5px;color:#5C6B85;">Low</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex:1;"><div style="width:100%;height:35px;background:#D4A03C;border-radius:2px 2px 0 0;"></div><div style="font-size:5.5px;color:#5C6B85;">Medium</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex:1;"><div style="width:100%;height:55px;background:#C0392B;border-radius:2px 2px 0 0;"></div><div style="font-size:5.5px;color:#5C6B85;">High</div></div>
+      </div>
+      <div class="vl">Column · X=LTV_Band · Y=Delinquency Rate · Legend=CreditBand</div>
+    </div>
+    <div class="visual tw chart-h">
+      <div class="vtitle">LTV vs Credit Score</div>
+      <svg viewBox="0 0 80 60" style="width:80px;">
+        <rect x="0" y="0" width="80" height="60" fill="#0A0E14" rx="3"/>
+        <circle cx="15" cy="15" r="2" fill="#2E8B57"/><circle cx="25" cy="20" r="2" fill="#2E8B57"/><circle cx="35" cy="18" r="2" fill="#2E8B57"/>
+        <circle cx="45" cy="30" r="2" fill="#D4A03C"/><circle cx="55" cy="38" r="2" fill="#D4A03C"/>
+        <circle cx="60" cy="45" r="2" fill="#C0392B"/><circle cx="68" cy="50" r="2" fill="#C0392B"/>
+        <rect x="52" y="38" width="26" height="20" fill="#C0392B" opacity="0.08" rx="2"/>
+      </svg>
+      <div class="vl">Scatter · X=CreditScore · Y=LTV</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page-section">
+<div class="page-title"><div class="page-num">5</div>Vintage Analysis — Layout</div>
+<div class="canvas">
+  <div class="pbar"><span class="pbar-title">🏦 Credit Risk Intelligence</span><span class="ptab active">Vintage Analysis</span></div>
+  <div class="slicer-bar"><span class="sl-label">Loan Type:</span><span class="sl">All</span><span class="sl">Fixed 30yr</span><span class="sl">Fixed 15yr</span><span class="sl">ARM 5/1</span></div>
+  <div class="row">
+    <div class="visual card"><div class="vl">TOTAL LOANS</div><div class="vv">5,000</div></div>
+    <div class="visual card"><div class="vl">PORTFOLIO</div><div class="vv">$2.44B</div></div>
+    <div class="visual card" style="border-top:2px solid #C0392B;"><div class="vl">DELINQUENCY</div><div class="vv" style="color:#FF6B6B;">25.9%</div></div>
+  </div>
+  <div class="row">
+    <div class="visual wide chart-h">
+      <div class="vtitle">Origination Volume ($M) vs Delinquency Rate (%) — by Year</div>
+      <div class="bar-chart">
+        <div class="bar" style="height:28%;background:#1A3559;"></div>
+        <div class="bar" style="height:42%;background:#234876;"></div>
+        <div class="bar" style="height:68%;"></div>
+        <div class="bar" style="height:92%;"></div>
+        <div class="bar" style="height:80%;"></div>
+        <div class="bar" style="height:55%;background:#234876;"></div>
+      </div>
+      <div class="vl">Line & Column · X=OriginationYear · Column=Volume_M · Line=DelRate</div>
+    </div>
+    <div class="visual hw chart-h" style="flex-direction:column;align-items:stretch;">
+      <div class="vtitle">Vintage Performance Table</div>
+      <div class="tbl" style="flex:1;">
+        <div class="tbl-h"><span class="tbl-hc">Year</span><span class="tbl-hc">Loans</span><span class="tbl-hc">Vol $M</span><span class="tbl-hc">DelRate</span><span class="tbl-hc">AvgLTV</span><span class="tbl-hc">AvgScore</span></div>
+        <div class="tbl-r"><span class="tbl-rc">2019</span><span class="tbl-rc">612</span><span class="tbl-rc">281</span><span class="tbl-rc">22.1%</span><span class="tbl-rc">74.2</span><span class="tbl-rc">698</span></div>
+        <div class="tbl-r"><span class="tbl-rc">2021</span><span class="tbl-rc">894</span><span class="tbl-rc">412</span><span class="tbl-rc">28.4%</span><span class="tbl-rc">77.8</span><span class="tbl-rc">685</span></div>
+        <div class="tbl-r"><span class="tbl-rc">2023</span><span class="tbl-rc">756</span><span class="tbl-rc">358</span><span class="tbl-rc">26.8%</span><span class="tbl-rc">76.1</span><span class="tbl-rc">691</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page-section">
+<div class="page-title"><div class="page-num">6</div>Credit Quality — Layout</div>
+<div class="canvas">
+  <div class="pbar"><span class="pbar-title">🏦 Credit Risk Intelligence</span><span class="ptab active">Credit Quality</span></div>
+  <div class="slicer-bar"><span class="sl-label">Region:</span><span class="sl">All</span><span class="sl">North</span><span class="sl">South</span></div>
+  <div class="row">
+    <div class="visual card"><div class="vl">AVG CREDIT SCORE</div><div class="vv">692</div></div>
+    <div class="visual card" style="border-top:2px solid #D4A03C;"><div class="vl">DEFAULT EXPOSURE</div><div class="vv" style="color:#F0B860;">$108M</div></div>
+  </div>
+  <div class="row">
+    <div class="visual tw chart-h">
+      <div class="vtitle">Credit Band Distribution</div>
+      <svg viewBox="0 0 80 70" style="width:70px;">
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#1C2333" stroke-width="12"/>
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#2E8B57" stroke-width="12" stroke-dasharray="80 176" transform="rotate(-90 40 35)"/>
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#5B9BF5" stroke-width="12" stroke-dasharray="60 176" stroke-dashoffset="-80" transform="rotate(-90 40 35)"/>
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#D4A03C" stroke-width="12" stroke-dasharray="25 176" stroke-dashoffset="-140" transform="rotate(-90 40 35)"/>
+        <circle cx="40" cy="35" r="28" fill="none" stroke="#C0392B" stroke-width="12" stroke-dasharray="11 176" stroke-dashoffset="-165" transform="rotate(-90 40 35)"/>
+      </svg>
+      <div class="vl">Donut · Legend=CreditBand</div>
+    </div>
+    <div class="visual tw chart-h">
+      <div class="vtitle">Default Exposure by Credit Band</div>
+      <div style="width:100%;padding:0 4px;display:flex;flex-direction:column;gap:3px;">
+        <div style="display:flex;align-items:center;gap:3px;"><span style="font-size:6px;color:#5C6B85;width:40px;">Excellent</span><div style="width:15%;height:7px;background:#2E8B57;border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:3px;"><span style="font-size:6px;color:#5C6B85;width:40px;">Good</span><div style="width:30%;height:7px;background:#5B9BF5;border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:3px;"><span style="font-size:6px;color:#5C6B85;width:40px;">Fair</span><div style="width:55%;height:7px;background:#D4A03C;border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:3px;"><span style="font-size:6px;color:#5C6B85;width:40px;">Poor</span><div style="width:85%;height:7px;background:#C0392B;border-radius:2px;"></div></div>
+      </div>
+      <div class="vl">Bar · Y=CreditBand · X=Default Exposure $M</div>
+    </div>
+    <div class="visual wide chart-h" style="flex-direction:column;align-items:stretch;">
+      <div class="vtitle">Credit Band vs Loan Status Matrix</div>
+      <div class="tbl" style="flex:1;">
+        <div class="tbl-h"><span class="tbl-hc">CreditBand</span><span class="tbl-hc">Current</span><span class="tbl-hc">30 DPD</span><span class="tbl-hc">60 DPD</span><span class="tbl-hc">90 DPD</span><span class="tbl-hc">Default</span></div>
+        <div class="tbl-r"><span class="tbl-rc" style="color:#2E8B57;">Excellent</span><span class="tbl-rc">812</span><span class="tbl-rc">42</span><span class="tbl-rc">18</span><span class="tbl-rc">10</span><span class="tbl-rc">5</span></div>
+        <div class="tbl-r"><span class="tbl-rc" style="color:#5B9BF5;">Good</span><span class="tbl-rc">1,245</span><span class="tbl-rc">98</span><span class="tbl-rc">54</span><span class="tbl-rc">32</span><span class="tbl-rc">18</span></div>
+        <div class="tbl-r"><span class="tbl-rc" style="color:#D4A03C;">Fair</span><span class="tbl-rc">895</span><span class="tbl-rc">188</span><span class="tbl-rc">112</span><span class="tbl-rc">88</span><span class="tbl-rc">65</span></div>
+        <div class="tbl-r"><span class="tbl-rc" style="color:#C0392B;">Poor</span><span class="tbl-rc">342</span><span class="tbl-rc">162</span><span class="tbl-rc">118</span><span class="tbl-rc">98</span><span class="tbl-rc">124</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
